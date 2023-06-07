@@ -6,7 +6,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import AttachFileOutlinedIcon from '@material-ui/icons/AttachFileOutlined'
 import MicOutlinedIcon from '@material-ui/icons/MicOutlined';
 import { makeStyles } from '@material-ui/core/styles'
-import axios from 'axios'
+// import axios from 'axios'
 import io from 'socket.io-client'
 
 
@@ -38,7 +38,7 @@ const ChatPage = () => {
         // Clean up the event listener when the component unmounts
         socket.off('chat message')
       }
-    }, [])
+    }, [socket, messages])
 
    const handleSendMessage = () => {
      if (inputValue.trim() !== '') {
